@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Countdown Clock Creator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script defer src="index.js"></script>
+    <script defer src="src/animation.js"></script>
+    <script defer src="src/user.js"></script>
+</head>
+
+<body>
+    <section class="hero is-dark is-fullheight">
+        <div class="hero-head">
+            <div class="container">
+                <div class="title is-large has-text-centered">
+                    <h1>Countdown Clock Creator</h1>
+                </div>
+                <div class="columns">
+                    <div class="column is-one-half">
+                        <div class="container">
+                            <form id="animation-form" action="http://localhost:3000/animations" method="POST">
+                                <input type="hidden" name="user_id" id="user_id">
+                                <label for="nickname">Nickname: </label>
+                                <input type="text" id="nickname" name="nickname"><br>
+                                <label for="length">Length: </label>
+                                <input type="text" id="length" name="length"><br>
+                                <label for="song">Song: </label>
+                                <input type="file" id="song" name="song"><br>
+                                <label for="background">Background: </label>
+                                <input type="file" id="background" name="background"><br>
+                                <button type="submit">Add New Animation</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container has-text-centered">
+                            <form id="user-form" action="http://localhost:3000/users" method="POST">
+                                <label for="name">Name: </label>
+                                <input type="text" id="name" name="name">
+                                <button type="submit">Log in</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-one-quarter">
+                        <aside class="menu">
+                            <p class="menu-label">
+                                Render Slots
+                            </p>
+                            <ul id="animation-list" class="menu-list">
+                                <li><a class="is-active">Team Settings</a></li>
+                                <li><a>Invitations</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column is-two-thirds">
+                        <div class="container">
+                            <img id="image" src="media/short_clock.gif" alt="placeholder">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <div class="container has-text-centered">
+                <h2>by: technicholy</h2>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
